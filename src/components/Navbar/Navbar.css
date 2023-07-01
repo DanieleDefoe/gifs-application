@@ -1,0 +1,23 @@
+.nav,
+.nav__links {
+  width: 100%;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+  text-align: center;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav__link_active {
+  color: var(--primary-link-color);
+  border-bottom: 4px solid var(--primary-link-color);
+}
