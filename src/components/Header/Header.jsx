@@ -1,10 +1,10 @@
-import Icon from '../Icon/Icon'
-import './Header.css'
+import Icon from '../Icon/Icon';
+import './Header.css';
 
 export default function Header() {
   return (
-    <header>
+    <header className="header">
       <Icon />
     </header>
-  )
+  );
 }
