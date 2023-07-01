@@ -1,17 +1,24 @@
 .form__input {
   background: rgb(224, 217, 217, 0.6);
   border: 0;
+  height: 100%;
   border-radius: 2px;
-  margin: 0 5px 0 0;
-  width: 90%;
-  padding: 0;
-  cursor: pointer;
-}
-
-.form__input::placeholder {
-  padding-left: 3px;
+  width: 100%;
+  padding: 5px;
   font-size: 18px;
   line-height: 1.22;
   font-weight: 500;
-  color: rgb(43, 43, 43);
+  color: rgb(43 43 43);
+}
+
+.form__input:focus:invalid {
+  outline: 1.5px solid #f00;
+}
+
+.form__input:focus:valid {
+  outline: 1.5px solid #000;
+}
+
+.form__input::placeholder {
+  color: rgba(43 43 43 0.6);
 }
