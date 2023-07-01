@@ -1,3 +1,8 @@
+.search {
+  display: flex;
+  flex-direction: column;
+}
+
 .form {
   width: 80%;
   min-height: 30px;
