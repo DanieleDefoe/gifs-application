@@ -4,10 +4,12 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
+import Layout from '../Layout/Layout'
+import './App.css'
 
 const routes = createRoutesFromElements(
-  <Route path="/gifs-application/">
-    <Route index element={<h1>HELLO REACT ROUTER DOM (AGAIN...)</h1>} />
+  <Route path="/gifs-application/" element={<Layout />}>
+    <Route index element={<p>goirsjhiorwsjgkslgjs</p>} />
   </Route>,
 )
 const router = createBrowserRouter(routes)
