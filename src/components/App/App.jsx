@@ -2,22 +2,22 @@ import {
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-  Route
-} from 'react-router-dom';
-import Form from '../Form/Form';
-import Layout from '../Layout/Layout';
-import './App.css';
+  Route,
+} from 'react-router-dom'
+import Layout from '../Layout/Layout'
+import Home from '../Home/Home'
+import './App.css'
 
 const routes = createRoutesFromElements(
   <Route path="/gifs-application/" element={<Layout />}>
-    <Route index element={<Form />} />
+    <Route index element={<Home />} />
     <Route path="trendings" element={<h1>TRENDINGS</h1>} />
     <Route path="random" element={<h1>Random GIF</h1>} />
-  </Route>
-);
+  </Route>,
+)
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes)
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />
 }

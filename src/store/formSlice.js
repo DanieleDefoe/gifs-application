@@ -4,11 +4,14 @@ const formSlice = createSlice({
   name: 'form',
   initialState: { values: {}, errors: {}, isValid: false },
   reducers: {
+    setInitialValues(state, action) {
+      state.values = { ...state.values, ...action.payload };
+    },
     handleChange(state, action) {
-      const { name, value, validationMessage, closest } = action.payload;
+      const { name, validationMessage, value, isValid } = action.payload;
       state.values[name] = value;
       state.errors[name] = validationMessage;
-      state.isValid = closest('form').checkValidity();
+      state.isValid = isValid;
     },
     resetForm(state) {
       state.values = {};
@@ -18,5 +21,5 @@ const formSlice = createSlice({
   }
 });
 
-export const { handleChange, resetForm } = formSlice.actions;
+export const { handleChange, resetForm, setInitialValues } = formSlice.actions;
 export default formSlice.reducer;
