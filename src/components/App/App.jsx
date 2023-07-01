@@ -9,7 +9,7 @@ import './App.css';
 
 const routes = createRoutesFromElements(
   <Route path="/gifs-application/" element={<Layout />}>
-    <Route index element={<></>} />
+    <Route index element={<h1>Поиск</h1>} />
     <Route path="trendings" element={<h1>TRENDINGS</h1>} />
     <Route path="random" element={<h1>Random GIF</h1>} />
   </Route>
