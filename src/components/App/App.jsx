@@ -4,13 +4,13 @@ import {
   createRoutesFromElements,
   Route,
 } from 'react-router-dom'
-import Form from '../Form/Form'
 import Layout from '../Layout/Layout'
+import Home from '../Home/Home'
 import './App.css'
 
 const routes = createRoutesFromElements(
   <Route path="/gifs-application/" element={<Layout />}>
-    <Route index element={<Form />} />
+    <Route index element={<Home />} />
     <Route path="trendings" element={<h1>TRENDINGS</h1>} />
     <Route path="random" element={<h1>Random GIF</h1>} />
   </Route>,
