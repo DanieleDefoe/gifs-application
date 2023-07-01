@@ -1,0 +1,19 @@
+.button__show-more {
+  max-width: 200px;
+  width: 100%;
+  min-height: 25px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(43, 43, 43);
+  border-radius: 2px;
+  background-color: rgb(224, 217, 217, 0.6);
+  margin: 20px auto 0;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.button__show-more:hover {
+  background-color: transparent;
+  scale: 1.4;
+}

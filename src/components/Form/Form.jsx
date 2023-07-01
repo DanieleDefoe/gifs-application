@@ -17,29 +17,32 @@ export default function Form() {
   }
 
   return (
-    <form className="form" onSubmit={onSubmit} noValidate>
-      <fieldset className="form__field">
-        <Input />
-        {searchError && (
-          <span className="form__input-error">{searchError}</span>
-        )}
-      </fieldset>
-      <ul className="form__buttons">
-        <li className="form__button-item">
-          <button
-            className="form__button form__button-close"
-            type="reset"
-            onClick={onReset}
-          />
-        </li>
-        <li className="form__button-item">
-          <button
-            className="form__button form__button-search"
-            type="submit"
-            disabled={!isValid}
-          />
-        </li>
-      </ul>
-    </form>
+    <section className="search">
+      <form className="form" onSubmit={onSubmit} noValidate>
+        <fieldset className="form__field">
+          <Input />
+          {searchError && (
+            <span className="form__input-error">{searchError}</span>
+          )}
+        </fieldset>
+        <ul className="form__buttons">
+          <li className="form__button-item">
+            <button
+              className="form__button form__button-close"
+              type="reset"
+              onClick={onReset}
+            />
+          </li>
+          <li className="form__button-item">
+            <button
+              className="form__button form__button-search"
+              type="submit"
+              disabled={!isValid}
+            />
+          </li>
+        </ul>
+      </form>
+      <Button />
+    </section>
   )
 }
