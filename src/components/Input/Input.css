@@ -11,10 +11,6 @@
   color: rgb(43 43 43);
 }
 
-.form__input:focus:invalid {
-  outline: 1.5px solid #f00;
-}
-
 .form__input:focus:valid {
   outline: 1.5px solid #000;
 }

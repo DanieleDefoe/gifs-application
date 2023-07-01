@@ -14,7 +14,13 @@
 
 .nav__link {
   text-decoration: none;
+  font-size: 18px;
   color: #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+  color: var(--primary-link-color);
 }
 
 .nav__link_active {

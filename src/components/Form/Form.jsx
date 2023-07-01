@@ -1,11 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { resetForm } from '../../store/formSlice'
+import { getSearchGifs } from '../../store/gifsSlice'
 import Input from '../Input/Input'
 import './Form.css'
 
 export default function Form() {
   const dispatch = useDispatch()
   const { search: searchError } = useSelector((store) => store.form.errors)
+  const { search: searchValue } = useSelector((store) => store.form.values)
   const { isValid } = useSelector((store) => store.form)
 
   function onReset() {
@@ -14,6 +16,7 @@ export default function Form() {
 
   function onSubmit(event) {
     event.preventDefault()
+    dispatch(getSearchGifs(searchValue))
   }
 
   return (
