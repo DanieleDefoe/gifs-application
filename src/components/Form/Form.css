@@ -15,6 +15,13 @@
   background-size: 20px 20px;
   border-radius: 2px;
   padding: 0;
+  cursor: pointer;
+  transition: all 0.6s ease;
+}
+
+.form__button:hover {
+  background-color: transparent;
+  scale: 1.4;
 }
 
 .form__button-close {

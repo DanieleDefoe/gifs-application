@@ -5,6 +5,7 @@
   margin: 0 5px 0 0;
   width: 90%;
   padding: 0;
+  cursor: pointer;
 }
 
 .form__input::placeholder {
