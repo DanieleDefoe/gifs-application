@@ -24,8 +24,12 @@ export default function Form() {
     dispatch(getSearchGifs(searchValue))
   }
 
+  function isResetButtonDisabled() {
+    return inputRef.current?.value.length === 0
+  }
+
   return (
-    <form className="form" onSubmit={onSubmit} noValidate>
+    <form className="form" onSubmit={onSubmit} onReset={onReset} noValidate>
       <fieldset className="form__field">
         <Input ref={inputRef} />
         {searchError && (
@@ -34,7 +38,11 @@ export default function Form() {
       </fieldset>
       <ul className="form__buttons">
         <li className="form__button-item">
-          <Button props={'form__button-close'} type="reset" onClick={onReset} />
+          <Button
+            props={'form__button-close'}
+            type="reset"
+            disabled={isResetButtonDisabled()}
+          />
         </li>
         <li className="form__button-item">
           <Button
