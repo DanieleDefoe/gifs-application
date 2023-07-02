@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
 import Form from '../Form/Form';
+import GifsContainer from '../GifsContainer/GifsContainer';
 import Loading from '../Loading/Loading';
 import './Home.css';
 
@@ -10,7 +11,7 @@ export default function Home() {
   return (
     <Fragment>
       <Form />
-      {isLoading ? <Loading /> : <h1>GIFS</h1>}
+      {isLoading ? <Loading /> : <GifsContainer />}
     </Fragment>
   );
 }

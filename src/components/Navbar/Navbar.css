@@ -16,7 +16,7 @@
   text-decoration: none;
   font-size: 18px;
   color: #000;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-out;
 }
 
 .nav__link:hover {
