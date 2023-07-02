@@ -2,7 +2,7 @@ import './Loading.css';
 
 export default function Loading() {
   return (
-    <p className="loading">
+    <div className="loading">
       <div className="weight">
         <div className="panda">
           <div className="panda__contain">
@@ -18,6 +18,6 @@ export default function Loading() {
         </div>
       </div>
       <div className="panda__shadow"></div>
-    </p>
+    </div>
   );
 }
