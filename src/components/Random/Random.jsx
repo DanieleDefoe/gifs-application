@@ -10,9 +10,14 @@ export default function Random() {
   const { isLoading, data } = useSelector((store) => store.random)
   console.log(data, isLoading)
   const dispatch = useDispatch()
+
   useEffect(() => {
-    dispatch(getRandom())
+    handleRandom()
   }, [])
+
+  function handleRandom() {
+    dispatch(getRandom())
+  }
 
   return (
     <section className="random">
@@ -22,7 +27,7 @@ export default function Random() {
         isLoading === false && (
           <>
             <Gif embed_url={data.embed_url} />
-            <Button props={'random__button-more'} />
+            <Button props={'random__button-more'} onClick={handleRandom} />
           </>
         )
       )}

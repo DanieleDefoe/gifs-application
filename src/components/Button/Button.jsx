@@ -7,6 +7,6 @@ export default function Button({ props, type, onClick, disabled }) {
       type={type}
       onClick={onClick}
       disabled={disabled}
-    ></button>
+    />
   )
 }
