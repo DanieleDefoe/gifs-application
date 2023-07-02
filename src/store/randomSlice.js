@@ -3,7 +3,7 @@ import { BASE_URL, API_KEY } from '../utils/constants';
 
 export const getRandom = createAsyncThunk('random/getRandom', async () => {
   try {
-    const response = await fetch(`${BASE_URL}/random?api_key=${API_KEY}&limit=1`);
+    const response = await fetch(`${BASE_URL}/random?api_key=${API_KEY}`);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -13,13 +13,14 @@ export const getRandom = createAsyncThunk('random/getRandom', async () => {
 
 const randomSlice = createSlice({
   name: 'random',
-  initialState: { isLoading: null, data: [] },
+  initialState: { isLoading: null, data: {} },
   reducers: {},
   extraReducers: {
     [getRandom.pending](state) {
       state.isLoading = true;
     },
     [getRandom.fulfilled](state, action) {
+      console.log(action.payload);
       state.data = action.payload.data;
       state.isLoading = false;
     },

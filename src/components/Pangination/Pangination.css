@@ -3,10 +3,6 @@
   width: 100%;
 }
 
-.pangination {
-  margin: 40px auto;
-}
-
 .pangination__list {
   display: flex;
   list-style: none;
