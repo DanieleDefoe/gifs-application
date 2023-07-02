@@ -1,0 +1,24 @@
+.pangination,
+.pangination__container {
+  width: 100%;
+}
+
+.pangination__list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.pangination__list-number {
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.pangination__list-number:hover {
+  color: var(--primary-link-color);
+}
