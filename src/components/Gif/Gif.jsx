@@ -1,6 +1,6 @@
 import './Gif.css'
 
-export default function Gif({ embed_url, title, username }) {
+export default function Gif({ embed_url }) {
   return (
     <>
       <div
