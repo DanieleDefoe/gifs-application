@@ -9,6 +9,7 @@
 }
 
 :root {
+  scroll-behavior: smooth;
   --primary-link-color: #ea5400;
 }
 

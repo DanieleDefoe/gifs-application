@@ -1,5 +1,6 @@
 import { Fragment } from 'react'
 import { useSelector } from 'react-redux'
+import { focusOn } from '../../utils/utils'
 import Form from '../Form/Form'
 import Gif from '../Gif/Gif'
 import GifsContainer from '../GifsContainer/GifsContainer'
@@ -16,7 +17,7 @@ export default function Home() {
         <Loading />
       ) : (
         isLoading === false && (
-          <GifsContainer>
+          <GifsContainer onLoad={focusOn}>
             {data.map(({ id, embed_url }) => {
               return <Gif key={id} embed_url={embed_url} />
             })}
