@@ -1,3 +1,15 @@
 .random {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.random__button-more {
+  min-width: 80px;
+  min-height: 30px;
+  margin-top: 30px;
+  background-image: url(../../images/next.svg);
+  background-size: 30px 30px;
 }
