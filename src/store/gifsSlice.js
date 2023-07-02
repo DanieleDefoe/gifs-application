@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { BASE_URL, API_KEY } from '../utils/constants';
 
-export const getSearchGifs = createAsyncThunk('gifs/getSearchGifs', async query => {
+export const getSearchGifs = createAsyncThunk('gifs/getSearchGifs', async (query) => {
   try {
     const response = await fetch(`${BASE_URL}/search?api_key=${API_KEY}&q=${query}&limit=9`);
     const data = await response.json();
