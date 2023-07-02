@@ -43,6 +43,7 @@
   background-image: url(../../images/search.svg);
 }
 
-.form__button-search:disabled {
+.form__button-search:disabled,
+.form__button-close:disabled {
   pointer-events: none;
 }

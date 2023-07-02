@@ -1,4 +1,4 @@
-import './Button.css';
+import './Button.css'
 
 export default function Button({ props, type, onClick, disabled }) {
   return (
@@ -7,6 +7,6 @@ export default function Button({ props, type, onClick, disabled }) {
       type={type}
       onClick={onClick}
       disabled={disabled}
-    ></button>
-  );
+    />
+  )
 }
