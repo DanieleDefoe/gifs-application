@@ -10,7 +10,7 @@ export default function Input() {
   useEffect(() => {
     dispatch(
       setInitialValues({
-        search: '',
+        search: searchValue || '',
       }),
     )
   }, [])
