@@ -11,8 +11,6 @@ export default function Trendings({ onLoad }) {
   const { isLoading, data } = useSelector((store) => store.trendings)
   const dispatch = useDispatch()
 
-  console.log(isLoading, data)
-
   useEffect(() => {
     dispatch(getTrendings())
   }, [])

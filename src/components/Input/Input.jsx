@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
+import { forwardRef, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { handleChange, setInitialValues } from '../../store/formSlice'
 import './Input.css'
 
-export default function Input() {
+const Input = forwardRef(function (props, ref) {
   const dispatch = useDispatch()
   const { search: searchValue } = useSelector((store) => store.form.values)
 
@@ -32,6 +32,7 @@ export default function Input() {
   return (
     <input
       type="text"
+      ref={ref}
       className="form__input"
       value={searchValue || ''}
       name="search"
@@ -41,4 +42,6 @@ export default function Input() {
       onChange={onChange}
     />
   )
-}
+})
+
+export default Input

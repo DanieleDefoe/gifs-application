@@ -9,7 +9,6 @@ import './Random.css'
 
 export default function Random() {
   const { isLoading, data } = useSelector((store) => store.random)
-  console.log(data, isLoading)
   const dispatch = useDispatch()
 
   useEffect(() => {
