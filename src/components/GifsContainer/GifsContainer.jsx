@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef } from 'react'
-import Pangination from '../Pangination/Pangination'
+import Pangination from '../Pagination/Pagination'
 import './GifsContainer.css'
 import { focusOn } from '../../utils/utils'
 
@@ -15,7 +15,6 @@ export default function GifsContainer({ children }) {
       <section className="gifs-container" ref={containerRef}>
         {children}
       </section>
-      <Pangination />
     </Fragment>
   )
 }

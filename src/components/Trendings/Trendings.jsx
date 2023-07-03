@@ -4,6 +4,7 @@ import { getTrendings } from '../../store/trendingsSlice'
 import GifsContainer from '../GifsContainer/GifsContainer'
 import Loading from '../Loading/Loading'
 import Gif from '../Gif/Gif'
+import Pagination from '../Pagination/Pagination'
 import './Trendings.css'
 
 export default function Trendings() {
@@ -11,7 +12,7 @@ export default function Trendings() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getTrendings())
+    dispatch(getTrendings(0))
   }, [])
 
   return (
@@ -20,11 +21,14 @@ export default function Trendings() {
         <Loading />
       ) : (
         isLoading === false && (
-          <GifsContainer>
-            {data.map(({ id, embed_url }) => (
-              <Gif key={id} embed_url={embed_url} />
-            ))}
-          </GifsContainer>
+          <>
+            <GifsContainer>
+              {data.map(({ id, embed_url }) => (
+                <Gif key={id} embed_url={embed_url} />
+              ))}
+            </GifsContainer>
+            <Pagination type="trendings" />
+          </>
         )
       )}
     </Fragment>

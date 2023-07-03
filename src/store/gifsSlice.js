@@ -24,7 +24,6 @@ const gifsSlice = createSlice({
       state.isLoading = true;
     },
     [getSearchGifs.fulfilled](state, action) {
-      console.log(action.payload.pagination)
       state.data = action.payload.data;
       state.isLoading = false;
     },

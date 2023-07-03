@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { BASE_URL, API_KEY } from '../utils/constants';
 
-export const getTrendings = createAsyncThunk('trendings/getTrendings', async () => {
+export const getTrendings = createAsyncThunk('trendings/getTrendings', async ({ offset }) => {
   try {
-    const response = await fetch(`${BASE_URL}/trending?api_key=${API_KEY}&limit=9`);
+    const response = await fetch(`${BASE_URL}/trending?api_key=${API_KEY}&limit=9&offset=${offset}`);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -13,13 +13,18 @@ export const getTrendings = createAsyncThunk('trendings/getTrendings', async () 
 
 const trendingsSlice = createSlice({
   name: 'trendings',
-  initialState: { isLoading: null, data: [] },
-  reducers: {},
+  initialState: { isLoading: null, data: [], offset: 0 },
+  reducers: {
+    updateOffset(state) {
+      state.offset += 9
+    },
+  },
   extraReducers: {
     [getTrendings.pending](state) {
       state.isLoading = true;
     },
     [getTrendings.fulfilled](state, action) {
+      console.log(action.payload.pagination)
       state.data = action.payload.data;
       state.isLoading = false;
     },
@@ -29,4 +34,5 @@ const trendingsSlice = createSlice({
   }
 });
 
+export const { updateOffset } = trendingsSlice.actions
 export default trendingsSlice.reducer;

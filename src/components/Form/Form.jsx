@@ -22,7 +22,6 @@ export default function Form() {
   function onSubmit(event) {
     event.preventDefault()
     inputRef.current.blur()
-    console.log(searchValue, offset)
     dispatch(getSearchGifs({ searchValue, offset }))
   }
 
