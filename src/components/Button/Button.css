@@ -13,6 +13,13 @@
   transition: all 0.6s ease;
 }
 
+.button_type_show-more {
+  width: 100%;
+  max-width: 200px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
 .button:hover {
   background-color: transparent;
   scale: 1.4;
