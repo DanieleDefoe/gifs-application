@@ -1,7 +1,6 @@
 .app {
   width: 100%;
   min-height: 100vh;
-  /* background: linear-gradient(to right, #556644, #557788); */
   background: linear-gradient(
     -45deg,
     #ee7752,
