@@ -13,7 +13,7 @@ export const getSearchGifs = createAsyncThunk('gifs/getSearchGifs', async ({ sea
 
 const gifsSlice = createSlice({
   name: 'gifs',
-  initialState: { isLoading: null, data: [], loadedData: [], offset: 0 },
+  initialState: { isLoading: null, data: [], loadedData: [], offset: 0, totalCount: null },
   reducers: {
     updateOffset(state) {
       state.offset += 9
@@ -24,6 +24,12 @@ const gifsSlice = createSlice({
     clearSearch(state) {
       state.data = []
       state.loadedData = []
+    },
+    clearTotalCount(state) {
+      state.totalCount = null
+    },
+    clearLoading(state) {
+      state.isLoading = null
     }
   },
   extraReducers: {
@@ -31,7 +37,10 @@ const gifsSlice = createSlice({
       state.isLoading = true;
     },
     [getSearchGifs.fulfilled](state, action) {
-      state.data = action.payload.data;
+      const { pagination, data } = action.payload
+      state.data = data;
+      state.totalCount = pagination.total_count
+      console.log(state.totalCount)
       state.isLoading = false;
     },
     [getSearchGifs.rejected](state) {
@@ -40,5 +49,5 @@ const gifsSlice = createSlice({
   }
 });
 
-export const { updateOffset, updateLoadedGifs, clearSearch } = gifsSlice.actions
+export const { updateOffset, updateLoadedGifs, clearSearch, clearTotalCount, clearLoading } = gifsSlice.actions
 export default gifsSlice.reducer;

@@ -1,7 +1,13 @@
 import { useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { resetForm } from '../../store/formSlice'
-import { getSearchGifs, clearSearch } from '../../store/gifsSlice'
+import {
+  getSearchGifs,
+  clearSearch,
+  clearTotalCount,
+  clearLoading,
+} from '../../store/gifsSlice'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 import './Form.css'
@@ -9,6 +15,7 @@ import './Form.css'
 export default function Form() {
   const inputRef = useRef(null)
   const dispatch = useDispatch()
+  const [searchParams, setSearchParams] = useSearchParams()
   const { search: searchError } = useSelector((store) => store.form.errors)
   const { search: searchValue } = useSelector((store) => store.form.values)
   const { offset } = useSelector((store) => store.gifs)
@@ -16,14 +23,26 @@ export default function Form() {
 
   function onReset() {
     inputRef.current.focus()
+    setSearchParams({})
+    dispatch(clearTotalCount())
+    dispatch(clearLoading())
+    dispatch(clearSearch())
     dispatch(resetForm())
   }
+
+  console.log(searchParams.get('search'))
 
   function onSubmit(event) {
     event.preventDefault()
     inputRef.current.blur()
+    setSearchParams({ search: searchValue })
     dispatch(clearSearch())
-    dispatch(getSearchGifs({ searchValue, offset }))
+    dispatch(
+      getSearchGifs({
+        searchValue: searchParams.get('search') || searchValue,
+        offset,
+      }),
+    )
   }
 
   function isResetButtonDisabled() {

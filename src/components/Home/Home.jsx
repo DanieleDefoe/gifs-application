@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Form from '../Form/Form'
 import GifsContainer from '../GifsContainer/GifsContainer'
@@ -8,21 +9,33 @@ import { renderGifs } from '../../utils/utils'
 import './Home.css'
 
 export default function Home() {
-  const { isLoading, data, loadedData } = useSelector((store) => store.gifs)
+  const { isLoading, data, loadedData, totalCount } = useSelector(
+    (store) => store.gifs,
+  )
+  const [searchParams, setSearchParams] = useSearchParams()
 
   return (
     <Fragment>
       <Form />
-      <GifsContainer>{renderGifs(loadedData)}</GifsContainer>
-      {isLoading ? (
-        <Loading />
+      {totalCount === 0 ? (
+        <h1>
+          Извините, по запросу "{searchParams.get('search')}" ничего не было
+          найдено.
+        </h1>
       ) : (
-        isLoading === false && (
-          <>
-            <GifsContainer>{renderGifs(data)}</GifsContainer>
-            <Pagination type="search" />
-          </>
-        )
+        <>
+          <GifsContainer>{renderGifs(loadedData)}</GifsContainer>
+          {isLoading ? (
+            <Loading />
+          ) : (
+            isLoading === false && (
+              <>
+                <GifsContainer>{renderGifs(data)}</GifsContainer>
+                <Pagination type="search" />
+              </>
+            )
+          )}
+        </>
       )}
     </Fragment>
   )
