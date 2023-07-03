@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import Button from '../Button/Button';
 import './Pangination.css';
 
 export default function Pangination() {
@@ -10,8 +10,8 @@ export default function Pangination() {
   return (
     <section className="pangination">
       <div className="pangination__container">
+        <Button props={'pangination__button-arrow pangination__button-arrow_back'} />
         <ul className="pangination__list">
-          <NavLink className="pangination__list-number">Вперед</NavLink>
           <li className="pangination__list-number">1</li>
           <li className="pangination__list-number">2</li>
           <li className="pangination__list-number">3</li>
@@ -20,8 +20,8 @@ export default function Pangination() {
           <li className="pangination__list-number">6</li>
           <li className="pangination__list-number">7</li>
           <li className="pangination__list-number">8</li>
-          <NavLink className="pangination__list-number">Назад</NavLink>
         </ul>
+        <Button props={'pangination__button-arrow pangination__button-arrow_next'} />
       </div>
     </section>
   );

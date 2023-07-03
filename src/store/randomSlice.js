@@ -20,7 +20,6 @@ const randomSlice = createSlice({
       state.isLoading = true;
     },
     [getRandom.fulfilled](state, action) {
-      console.log(action.payload);
       state.data = action.payload.data;
       state.isLoading = false;
     },
