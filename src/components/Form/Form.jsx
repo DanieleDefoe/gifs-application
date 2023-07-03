@@ -7,6 +7,7 @@ import {
   clearSearch,
   clearTotalCount,
   clearLoading,
+  updateSearchParams,
 } from '../../store/gifsSlice'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
@@ -27,15 +28,15 @@ export default function Form() {
     dispatch(clearTotalCount())
     dispatch(clearLoading())
     dispatch(clearSearch())
+    dispatch(updateSearchParams(''))
     dispatch(resetForm())
   }
-
-  console.log(searchParams.get('search'))
 
   function onSubmit(event) {
     event.preventDefault()
     inputRef.current.blur()
     setSearchParams({ search: searchValue })
+    dispatch(updateSearchParams(`?search=${searchValue}`))
     dispatch(clearSearch())
     dispatch(
       getSearchGifs({

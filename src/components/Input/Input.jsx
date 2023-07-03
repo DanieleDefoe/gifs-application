@@ -1,16 +1,18 @@
 import { forwardRef, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { handleChange, setInitialValues } from '../../store/formSlice'
 import './Input.css'
 
 const Input = forwardRef(function (props, ref) {
+  const [searchParams, setSearchParams] = useSearchParams()
   const dispatch = useDispatch()
   const { search: searchValue } = useSelector((store) => store.form.values)
 
   useEffect(() => {
     dispatch(
       setInitialValues({
-        search: searchValue || '',
+        search: searchParams.get('search') || '',
       }),
     )
   }, [])
