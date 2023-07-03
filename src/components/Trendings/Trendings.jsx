@@ -5,9 +5,8 @@ import GifsContainer from '../GifsContainer/GifsContainer'
 import Loading from '../Loading/Loading'
 import Gif from '../Gif/Gif'
 import './Trendings.css'
-import { focusOn } from '../../utils/utils'
 
-export default function Trendings({ onLoad }) {
+export default function Trendings() {
   const { isLoading, data } = useSelector((store) => store.trendings)
   const dispatch = useDispatch()
 
@@ -21,7 +20,7 @@ export default function Trendings({ onLoad }) {
         <Loading />
       ) : (
         isLoading === false && (
-          <GifsContainer onLoad={focusOn}>
+          <GifsContainer>
             {data.map(({ id, embed_url }) => (
               <Gif key={id} embed_url={embed_url} />
             ))}

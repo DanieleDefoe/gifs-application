@@ -1,3 +1,3 @@
-export function focusOn(event) {
-  event.target.scrollIntoView()
+export function focusOn(element) {
+  element.scrollIntoView()
 }

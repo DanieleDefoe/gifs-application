@@ -1,6 +1,15 @@
+import { useEffect, useRef } from 'react'
 import './Gif.css'
 
 export default function Gif({ embed_url, onLoad }) {
+  const gifRef = useRef(null)
+
+  useEffect(() => {
+    if (onLoad) {
+      onLoad(gifRef.current)
+    }
+  }, [])
+
   return (
     <div
       style={{
@@ -9,12 +18,12 @@ export default function Gif({ embed_url, onLoad }) {
         paddingBottom: '56%',
         position: 'relative',
       }}
+      ref={gifRef}
     >
       <iframe
         src={embed_url}
         style={{ position: 'absolute' }}
         className="gif"
-        onLoad={onLoad}
         allowFullScreen
       />
     </div>
