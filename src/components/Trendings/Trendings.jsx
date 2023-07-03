@@ -1,6 +1,7 @@
 import { Fragment, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getTrendings } from '../../store/trendingsSlice'
+import { renderGifs } from '../../utils/utils'
 import GifsContainer from '../GifsContainer/GifsContainer'
 import Loading from '../Loading/Loading'
 import Gif from '../Gif/Gif'
@@ -8,7 +9,9 @@ import Pagination from '../Pagination/Pagination'
 import './Trendings.css'
 
 export default function Trendings() {
-  const { isLoading, data } = useSelector((store) => store.trendings)
+  const { isLoading, data, loadedData } = useSelector(
+    (store) => store.trendings,
+  )
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -17,16 +20,13 @@ export default function Trendings() {
 
   return (
     <Fragment>
+      <GifsContainer>{renderGifs(loadedData)}</GifsContainer>
       {isLoading ? (
         <Loading />
       ) : (
         isLoading === false && (
           <>
-            <GifsContainer>
-              {data.map(({ id, embed_url }) => (
-                <Gif key={id} embed_url={embed_url} />
-              ))}
-            </GifsContainer>
+            <GifsContainer>{renderGifs(data)}</GifsContainer>
             <Pagination type="trendings" />
           </>
         )

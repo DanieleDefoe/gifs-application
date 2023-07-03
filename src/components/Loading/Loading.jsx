@@ -1,8 +1,16 @@
-import './Loading.css';
+import { useEffect, useRef } from 'react'
+import './Loading.css'
+import { focusOn } from '../../utils/utils'
 
 export default function Loading() {
+  const loadingRef = useRef(null)
+
+  useEffect(() => {
+    focusOn(loadingRef.current)
+  }, [])
+
   return (
-    <section className="loading">
+    <section className="loading" ref={loadingRef}>
       <div className="loading__container">
         <div className="loading__panda">
           <div className="loading__panda-contain">
@@ -19,5 +27,5 @@ export default function Loading() {
       </div>
       <div className="loading__panda-shadow"></div>
     </section>
-  );
+  )
 }

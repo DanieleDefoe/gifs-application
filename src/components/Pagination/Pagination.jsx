@@ -2,10 +2,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import {
   getSearchGifs,
   updateOffset as updateGifsOffset,
+  updateLoadedGifs,
 } from '../../store/gifsSlice'
 import {
   getTrendings,
   updateOffset as updateTrendingsOffset,
+  updateLoadedTrendings,
 } from '../../store/trendingsSlice'
 import Button from '../Button/Button'
 import './Pagination.css'
@@ -20,9 +22,11 @@ export default function Pagination({ type }) {
     if (type === 'search') {
       dispatch(updateGifsOffset())
       dispatch(getSearchGifs({ searchValue, offset: gifsOffset + 9 }))
+      dispatch(updateLoadedGifs())
     } else if (type === 'trendings') {
       dispatch(updateTrendingsOffset())
       dispatch(getTrendings({ offset: trendingsOffset + 9 }))
+      dispatch(updateLoadedTrendings())
     }
   }
 

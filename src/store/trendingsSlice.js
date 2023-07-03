@@ -13,10 +13,13 @@ export const getTrendings = createAsyncThunk('trendings/getTrendings', async ({ 
 
 const trendingsSlice = createSlice({
   name: 'trendings',
-  initialState: { isLoading: null, data: [], offset: 0 },
+  initialState: { isLoading: null, data: [], loadedData: [], offset: 0 },
   reducers: {
     updateOffset(state) {
       state.offset += 9
+    },
+    updateLoadedTrendings(state) {
+      state.loadedData.push(...state.data)
     },
   },
   extraReducers: {
@@ -24,7 +27,6 @@ const trendingsSlice = createSlice({
       state.isLoading = true;
     },
     [getTrendings.fulfilled](state, action) {
-      console.log(action.payload.pagination)
       state.data = action.payload.data;
       state.isLoading = false;
     },
@@ -34,5 +36,5 @@ const trendingsSlice = createSlice({
   }
 });
 
-export const { updateOffset } = trendingsSlice.actions
+export const { updateOffset, updateLoadedTrendings } = trendingsSlice.actions
 export default trendingsSlice.reducer;

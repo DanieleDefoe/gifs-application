@@ -13,11 +13,14 @@ export const getSearchGifs = createAsyncThunk('gifs/getSearchGifs', async ({ sea
 
 const gifsSlice = createSlice({
   name: 'gifs',
-  initialState: { isLoading: null, data: [], offset: 0 },
+  initialState: { isLoading: null, data: [], loadedData: [], offset: 0 },
   reducers: {
     updateOffset(state) {
       state.offset += 9
     },
+    updateLoadedGifs(state) {
+      state.loadedData.push(...state.data)
+    }
   },
   extraReducers: {
     [getSearchGifs.pending](state) {
@@ -33,5 +36,5 @@ const gifsSlice = createSlice({
   }
 });
 
-export const { updateOffset } = gifsSlice.actions
+export const { updateOffset, updateLoadedGifs } = gifsSlice.actions
 export default gifsSlice.reducer;
