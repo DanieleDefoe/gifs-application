@@ -1,20 +1,3 @@
-.app {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(
-    -45deg,
-    #ee7752,
-    #e73c7e,
-    #23a6d5,
-    #23d5ab,
-    #ae4477,
-    #0aff5e,
-    #102bff
-  );
-  background-size: 500% 500%;
-  animation: gradient 30s ease infinite;
-}
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -31,4 +14,21 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab,
+    #ae4477,
+    #0aff5e,
+    #102bff
+  );
+  background-size: 500% 500%;
+  animation: gradient 30s ease infinite;
 }

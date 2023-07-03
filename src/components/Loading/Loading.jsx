@@ -2,22 +2,22 @@ import './Loading.css';
 
 export default function Loading() {
   return (
-    <div className="loading">
-      <div className="weight">
-        <div className="panda">
-          <div className="panda__contain">
-            <div className="panda__ears"></div>
-            <div className="panda__head">
-              <div className="panda__eyes"></div>
-              <div className="panda__nose"></div>
+    <section className="loading">
+      <div className="loading__container">
+        <div className="loading__panda">
+          <div className="loading__panda-contain">
+            <div className="loading__panda-ears"></div>
+            <div className="loading__panda-head">
+              <div className="loading__panda-eyes"></div>
+              <div className="loading__panda-nose"></div>
             </div>
           </div>
-          <div className="panda__arms"></div>
-          <div className="panda__body"></div>
-          <div className="panda__legs"></div>
+          <div className="loading__panda-arms"></div>
+          <div className="loading__panda-body"></div>
+          <div className="loading__panda-legs"></div>
         </div>
       </div>
-      <div className="panda__shadow"></div>
-    </div>
+      <div className="loading__panda-shadow"></div>
+    </section>
   );
 }
