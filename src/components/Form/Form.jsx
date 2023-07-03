@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { resetForm } from '../../store/formSlice'
-import { getSearchGifs } from '../../store/gifsSlice'
+import { getSearchGifs, clearSearch } from '../../store/gifsSlice'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 import './Form.css'
@@ -22,6 +22,7 @@ export default function Form() {
   function onSubmit(event) {
     event.preventDefault()
     inputRef.current.blur()
+    dispatch(clearSearch())
     dispatch(getSearchGifs({ searchValue, offset }))
   }
 

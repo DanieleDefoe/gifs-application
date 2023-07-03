@@ -20,6 +20,10 @@ const gifsSlice = createSlice({
     },
     updateLoadedGifs(state) {
       state.loadedData.push(...state.data)
+    },
+    clearSearch(state) {
+      state.data = []
+      state.loadedData = []
     }
   },
   extraReducers: {
@@ -36,5 +40,5 @@ const gifsSlice = createSlice({
   }
 });
 
-export const { updateOffset, updateLoadedGifs } = gifsSlice.actions
+export const { updateOffset, updateLoadedGifs, clearSearch } = gifsSlice.actions
 export default gifsSlice.reducer;
