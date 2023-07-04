@@ -20,4 +20,5 @@
 
 .random__gif {
   height: 100%;
+  max-width: 768px;
 }
