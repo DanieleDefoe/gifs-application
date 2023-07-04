@@ -1,6 +1,6 @@
 # GIPHY
 
-**GitHub Pages** -->
+**GitHub Pages**
 
 [Ссылка на GitHub Pages](https://danieledefoe.github.io/gifs-application/)
 
@@ -28,12 +28,12 @@ _Технологии и функционал_
     - useSearchParams;
     - useRef.
 11. REDUX:
-    -Provider;
-    -useSelector;
-    -useDispatch;
+    - Provider;
+    - useSelector;
+    - useDispatch;
 12. REDUX/Toolkit:
-    -configureStore;
-    -createSlice;
-    -createAsyncThunk.
+    - configureStore;
+    - createSlice;
+    - createAsyncThunk.
 13. настроена работа с API.
 14. сборка Vite.
