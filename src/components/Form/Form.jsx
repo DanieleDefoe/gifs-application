@@ -35,8 +35,8 @@ export default function Form() {
   function onSubmit(event) {
     event.preventDefault()
     inputRef.current.blur()
-    setSearchParams({ search: searchValue })
-    dispatch(updateSearchParams(`?search=${searchValue}`))
+    setSearchParams({ search: searchValue, offset: offset })
+    dispatch(updateSearchParams(`?search=${searchValue}&offset=${offset}`))
     dispatch(clearSearch())
     dispatch(
       getSearchGifs({
@@ -44,10 +44,6 @@ export default function Form() {
         offset,
       }),
     )
-  }
-
-  function isResetButtonDisabled() {
-    return inputRef.current?.value.length === 0
   }
 
   return (
@@ -60,11 +56,7 @@ export default function Form() {
       </fieldset>
       <ul className="form__buttons">
         <li className="form__button-item">
-          <Button
-            props={'form__button-close'}
-            type="reset"
-            disabled={isResetButtonDisabled()}
-          />
+          <Button props={'form__button-close'} type="reset" disabled={false} />
         </li>
         <li className="form__button-item">
           <Button
