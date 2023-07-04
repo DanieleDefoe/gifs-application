@@ -35,8 +35,8 @@ export default function Form() {
   function onSubmit(event) {
     event.preventDefault()
     inputRef.current.blur()
-    setSearchParams({ search: searchValue, offset: offset })
-    dispatch(updateSearchParams(`?search=${searchValue}&offset=${offset}`))
+    setSearchParams({ search: searchValue })
+    dispatch(updateSearchParams(`?search=${searchValue}`))
     dispatch(clearSearch())
     dispatch(
       getSearchGifs({

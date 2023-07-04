@@ -1,7 +1,11 @@
 import { forwardRef, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { handleChange, setInitialValues } from '../../store/formSlice'
+import {
+  handleChange,
+  setInitialValues,
+  validateForm,
+} from '../../store/formSlice'
 import './Input.css'
 
 const Input = forwardRef(function (props, ref) {
@@ -9,12 +13,18 @@ const Input = forwardRef(function (props, ref) {
   const dispatch = useDispatch()
   const { search: searchValue } = useSelector((store) => store.form.values)
 
+  console.log(searchParams.get('search'))
+
   useEffect(() => {
+    const searchQueryParam = searchParams.get('search')
     dispatch(
       setInitialValues({
-        search: searchParams.get('search') || '',
+        search: searchQueryParam || '',
       }),
     )
+    if (searchQueryParam) {
+      dispatch(validateForm())
+    }
   }, [])
 
   function onChange(event) {
