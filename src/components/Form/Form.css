@@ -57,7 +57,7 @@
   .form {
     flex-direction: column;
     height: 100px;
-    gap: 15px;
+    gap: 20px;
   }
 
   .form__buttons {
@@ -71,5 +71,20 @@
   .form__button-search,
   .form__button-close {
     width: 100%;
+  }
+
+  .form__input-error {
+    bottom: -15px;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .form {
+    gap: 30px;
+  }
+
+  .form__input-error {
+    bottom: -30px;
   }
 }
