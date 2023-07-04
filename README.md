@@ -1,6 +1,6 @@
 # GIPHY
 
-**GitHub Pages** -->
+**GitHub Pages**
 
 [Ссылка на GitHub Pages](https://danieledefoe.github.io/gifs-application/)
 
