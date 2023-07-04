@@ -46,6 +46,7 @@
 
 .nav__button-link {
   width: 100%;
+  color: black;
   padding: 8px 10px;
   text-transform: uppercase;
   font-weight: 600;
