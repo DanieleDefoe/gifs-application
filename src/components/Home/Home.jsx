@@ -34,7 +34,9 @@ export default function Home() {
         </h1>
       ) : (
         <>
-          <GifsContainer>{renderGifs(loadedData)}</GifsContainer>
+          {loadedData.length > 0 && (
+            <GifsContainer>{renderGifs(loadedData)}</GifsContainer>
+          )}
           {isLoading ? (
             <Loading />
           ) : (
