@@ -16,3 +16,8 @@
 .gif:hover {
   transform: translateY(-10px);
 }
+
+.gif__link {
+  width: 100%;
+  display: block;
+}

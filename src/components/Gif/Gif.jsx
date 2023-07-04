@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './Gif.css';
 
-export default function Gif({ images, onLoad, props }) {
+export default function Gif({ images, onLoad, props, url }) {
   const gifRef = useRef(null);
 
   useEffect(() => {
@@ -10,5 +10,9 @@ export default function Gif({ images, onLoad, props }) {
     }
   }, []);
 
-  return <img src={images.downsized.url} alt="гифки" className={`gif ${props}`} />;
+  return (
+    <a href={url} className="gif__link" rel="noreferrer noopener nofollow" target="_blank">
+      <img src={images.downsized.url} alt="гифки" className={`gif ${props}`} />;
+    </a>
+  );
 }

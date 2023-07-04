@@ -5,7 +5,7 @@ export function focusOn(element) {
 }
 
 export function renderGifs(data) {
-  return data.map(({ id, images }, index) => {
-    return <Gif key={id + Date.now() + index} images={images} />;
+  return data.map(({ id, images, url }, index) => {
+    return <Gif key={id + Date.now() + index} url={url} images={images} />;
   });
 }

@@ -25,7 +25,7 @@ export default function Random() {
       ) : (
         isLoading === false && (
           <>
-            <Gif images={data.images} props={'random__gif'} />
+            <Gif images={data.images} props={'random__gif'} url={data.url} />
             <Button props={'random__button-more'} onClick={handleRandom} />
           </>
         )
