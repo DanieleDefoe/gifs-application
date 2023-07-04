@@ -21,8 +21,6 @@ export default function Home() {
   const [searchParams, setSearchParams] = useSearchParams()
   const dispatch = useDispatch()
 
-  console.log(offset)
-
   useEffect(() => {
     const searchQueryParam = searchParams.get('search')
     if (searchQueryParam) {
