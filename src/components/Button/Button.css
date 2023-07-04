@@ -24,7 +24,7 @@
 
 .button_type_show-more:hover,
 .button_type_show-more::after {
-  background-image: url(../../images/mingcute_arrows-down-fill.svg);
+  background-image: url(../../images/arrows-more.svg);
   background-size: 50px 50px;
 }
 
