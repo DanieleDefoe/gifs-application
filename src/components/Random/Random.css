@@ -17,3 +17,7 @@
 .random__button-more:active {
   scale: 1.2;
 }
+
+.random__gif {
+  height: 100%;
+}

@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getRandom } from '../../store/randomSlice';
-import { focusOn } from '../../utils/utils';
 import Button from '../Button/Button';
 import Gif from '../Gif/Gif';
 import Loading from '../Loading/Loading';
@@ -26,7 +25,7 @@ export default function Random() {
       ) : (
         isLoading === false && (
           <>
-            <Gif embed_url={data.embed_url} onLoad={focusOn} />
+            <Gif images={data.images} props={'random__gif'} />
             <Button props={'random__button-more'} onClick={handleRandom} />
           </>
         )

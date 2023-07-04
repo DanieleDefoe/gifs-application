@@ -1,11 +1,11 @@
-import Gif from '../components/Gif/Gif'
+import Gif from '../components/Gif/Gif';
 
 export function focusOn(element) {
-  element.scrollIntoView()
+  element.scrollIntoView();
 }
 
 export function renderGifs(data) {
-  return data.map(({ id, embed_url }, index) => {
-    return <Gif key={id + Date.now() + index} embed_url={embed_url} />
-  })
+  return data.map(({ id, images }, index) => {
+    return <Gif key={id + Date.now() + index} images={images} />;
+  });
 }
