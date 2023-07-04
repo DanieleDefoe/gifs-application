@@ -17,9 +17,12 @@ const formSlice = createSlice({
       state.values = {};
       state.errors = {};
       state.isValid = false;
+    },
+    validateForm(state) {
+      state.isValid = true
     }
   }
 });
 
-export const { handleChange, resetForm, setInitialValues } = formSlice.actions;
+export const { handleChange, resetForm, setInitialValues, validateForm } = formSlice.actions;
 export default formSlice.reducer;
