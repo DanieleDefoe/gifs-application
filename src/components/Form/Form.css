@@ -52,3 +52,24 @@
 .form__button-close:active {
   scale: 1.2;
 }
+
+@media only screen and (max-width: 768px) {
+  .form {
+    flex-direction: column;
+    height: 100px;
+    gap: 15px;
+  }
+
+  .form__buttons {
+    width: 100%;
+  }
+
+  .form__button-item {
+    width: 100%;
+  }
+
+  .form__button-search,
+  .form__button-close {
+    width: 100%;
+  }
+}

@@ -1,11 +1,17 @@
 .main {
   width: 100%;
   max-width: 1024px;
-  padding-inline: 15px;
+  padding-inline: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 20px;
   margin: 0 auto;
   padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    padding-inline: 15px;
+  }
 }

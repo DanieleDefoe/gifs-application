@@ -56,3 +56,20 @@
 .nav__button-link:active {
   scale: 0.9;
 }
+
+@media only screen and (max-width: 768px) {
+  .nav__links {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .nav__links > li {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .nav__link {
+    display: block;
+    width: 100%;
+  }
+}
