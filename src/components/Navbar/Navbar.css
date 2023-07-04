@@ -23,36 +23,39 @@
 }
 
 .nav__link {
+  padding: 8px 2px;
+  border-radius: 2px;
   transition: all 0.2s ease-out;
+  overflow: hidden;
 }
 
 .nav__link:hover {
-  background: #124fb9;
-  border-radius: 5px;
+  background: #994baa;
   animation: glow 1s infinite;
 }
 
 .nav__link_active {
-  background: rgb(105, 107, 227);
-  border-radius: 5px;
   color: whitesmoke;
   animation: glow 1s infinite;
   transition: 0.6s;
 }
 
 .nav__button-link {
-  min-width: 100px;
-  background-color: transparent;
+  width: 100%;
+  padding: 8px 12px;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .nav__button-link:hover {
-  scale: 1.03;
-  font-size: 16px;
+  scale: 1;
 }
 
 .nav__button-link:active {
   scale: 0.9;
+}
+
+.nav__button-link:focus {
+  opacity: 1;
 }
