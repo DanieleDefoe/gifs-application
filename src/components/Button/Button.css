@@ -15,9 +15,17 @@
 
 .button_type_show-more {
   width: 100%;
-  max-width: 200px;
-  padding: 10px 20px;
-  font-size: 16px;
+  max-width: 60px;
+  background-color: transparent;
+  min-height: 60px;
+  background-image: url(../../images/more.svg);
+  background-size: 50px 50px;
+}
+
+.button_type_show-more:hover,
+.button_type_show-more::after {
+  background-image: url(../../images/mingcute_arrows-down-fill.svg);
+  background-size: 50px 50px;
 }
 
 .button:hover {

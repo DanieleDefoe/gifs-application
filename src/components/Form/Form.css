@@ -47,3 +47,8 @@
 .form__button-close:disabled {
   pointer-events: none;
 }
+
+.form__button-search:active,
+.form__button-close:active {
+  scale: 1.2;
+}

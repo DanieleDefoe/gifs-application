@@ -13,3 +13,7 @@
   background-image: url(../../images/next.svg);
   background-size: 30px 30px;
 }
+
+.random__button-more:active {
+  scale: 1.2;
+}

@@ -23,20 +23,12 @@
 }
 
 .nav__link {
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #000;
-  cursor: pointer;
   transition: all 0.2s ease-out;
 }
 
 .nav__link:hover {
   background: #124fb9;
   border-radius: 5px;
-  color: whitesmoke;
   animation: glow 1s infinite;
 }
 
@@ -46,4 +38,21 @@
   color: whitesmoke;
   animation: glow 1s infinite;
   transition: 0.6s;
+}
+
+.nav__button-link {
+  min-width: 100px;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav__button-link:hover {
+  scale: 1.03;
+  font-size: 16px;
+}
+
+.nav__button-link:active {
+  scale: 0.9;
 }
