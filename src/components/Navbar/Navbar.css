@@ -23,6 +23,7 @@
 }
 
 .nav__link {
+  text-decoration: none;
   padding: 8px 0px;
   border-radius: 2px;
   transition: all 0.2s ease-out;
