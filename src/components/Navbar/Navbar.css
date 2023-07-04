@@ -55,8 +55,3 @@
 .nav__button-link:active {
   scale: 0.9;
 }
-
-.nav__button-link:focus {
-  opacity: 1;
-  background-color: rgb(105, 107, 227);
-}

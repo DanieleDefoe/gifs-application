@@ -1,5 +1,5 @@
 import { Fragment, useEffect } from 'react'
-import { useSearchParams, useLocation } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Form from '../Form/Form'
 import GifsContainer from '../GifsContainer/GifsContainer'
@@ -14,7 +14,6 @@ export default function Home() {
     (store) => store.gifs,
   )
   const [searchParams, setSearchParams] = useSearchParams()
-  const location = useLocation()
   const dispatch = useDispatch()
 
   useEffect(() => {
