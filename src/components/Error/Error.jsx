@@ -1,19 +1,8 @@
-import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { getSearchGifs } from '../../store/gifsSlice';
 import './Error.css';
 
 export default function Error() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const searchQueryParam = searchParams.get('search');
-    if (searchQueryParam) {
-      dispatch(getSearchGifs({ searchValue: searchQueryParam, offset: 0 }));
-    }
-  }, []);
 
   return (
     <>
