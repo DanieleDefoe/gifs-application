@@ -1,20 +1,23 @@
-import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Button from '../Button/Button';
-import './Navbar.css';
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Button from "../Button/Button";
+import "./Navbar.css";
 
 export default function Navbar() {
-  const { searchParams } = useSelector(store => store.gifs);
+  const { searchParams } = useSelector((store) => store.gifs);
 
   function handleActiveLink({ isActive }) {
-    return isActive ? 'nav__link nav__link_active' : 'nav__link';
+    return isActive ? "nav__link nav__link_active" : "nav__link";
   }
 
   return (
     <nav className="nav">
       <ul className="nav__links">
         <li>
-          <NavLink to={`/gifs-application/${searchParams}`} className={handleActiveLink}>
+          <NavLink
+            to={`/gifs-application/${searchParams}`}
+            className={handleActiveLink}
+          >
             <Button props="nav__button-link">Поиск</Button>
           </NavLink>
         </li>

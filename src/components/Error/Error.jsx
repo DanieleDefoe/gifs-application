@@ -1,14 +1,17 @@
-import { useSearchParams } from 'react-router-dom';
-import './Error.css';
+import { useLocation, useSearchParams } from "react-router-dom";
+import "./Error.css";
 
 export default function Error() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
 
   return (
     <>
       <h1 className="error__title">
         {`Извините, по вашему запросу "`}
-        <span className="error__search-query">{`${searchParams.get('search')}`}</span>
+        <span className="error__search-query">{`${
+          searchParams.get("search") || location.pathname
+        }`}</span>
         {`" ничего не найдено...`}
       </h1>
       <svg
@@ -1106,7 +1109,7 @@ export default function Error() {
                 d="M505.777 108.413C511.194 108.983 516.617 107.401 520.877 104.007"
                 stroke="#FCFEFF"
                 strokeWidth="1.309"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
               />
               <path
                 id="Vector_189"

@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const formSlice = createSlice({
-  name: 'form',
+  name: "form",
   initialState: { values: {}, errors: {}, isValid: false },
   reducers: {
     setInitialValues(state, action) {
@@ -19,10 +19,11 @@ const formSlice = createSlice({
       state.isValid = false;
     },
     validateForm(state) {
-      state.isValid = true
-    }
-  }
+      state.isValid = true;
+    },
+  },
 });
 
-export const { handleChange, resetForm, setInitialValues, validateForm } = formSlice.actions;
+export const { handleChange, resetForm, setInitialValues, validateForm } =
+  formSlice.actions;
 export default formSlice.reducer;

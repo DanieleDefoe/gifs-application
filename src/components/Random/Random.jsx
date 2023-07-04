@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getRandom } from '../../store/randomSlice';
-import { focusOn } from '../../utils/utils';
-import Button from '../Button/Button';
-import Gif from '../Gif/Gif';
-import Loading from '../Loading/Loading';
-import './Random.css';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getRandom } from "../../store/randomSlice";
+import { focusOn } from "../../utils/utils";
+import Button from "../Button/Button";
+import Gif from "../Gif/Gif";
+import Loading from "../Loading/Loading";
+import "./Random.css";
 
 export default function Random() {
-  const { isLoading, data } = useSelector(store => store.random);
+  const { isLoading, data } = useSelector((store) => store.random);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export default function Random() {
         isLoading === false && (
           <>
             <Gif embed_url={data.embed_url} onLoad={focusOn} />
-            <Button props={'random__button-more'} onClick={handleRandom} />
+            <Button props={"random__button-more"} onClick={handleRandom} />
           </>
         )
       )}

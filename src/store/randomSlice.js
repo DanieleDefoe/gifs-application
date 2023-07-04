@@ -1,7 +1,7 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { BASE_URL, API_KEY } from '../utils/constants';
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { BASE_URL, API_KEY } from "../utils/constants";
 
-export const getRandom = createAsyncThunk('random/getRandom', async () => {
+export const getRandom = createAsyncThunk("random/getRandom", async () => {
   try {
     const response = await fetch(`${BASE_URL}/random?api_key=${API_KEY}`);
     const data = await response.json();
@@ -12,7 +12,7 @@ export const getRandom = createAsyncThunk('random/getRandom', async () => {
 });
 
 const randomSlice = createSlice({
-  name: 'random',
+  name: "random",
   initialState: { isLoading: null, data: {} },
   reducers: {},
   extraReducers: {
@@ -25,8 +25,8 @@ const randomSlice = createSlice({
     },
     [getRandom.rejected](state) {
       state.isLoading = false;
-    }
-  }
+    },
+  },
 });
 
 export default randomSlice.reducer;

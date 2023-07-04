@@ -1,4 +1,4 @@
-import './Button.css'
+import "./Button.css";
 
 export default function Button({ props, type, onClick, disabled, children }) {
   return (
@@ -10,5 +10,5 @@ export default function Button({ props, type, onClick, disabled, children }) {
     >
       {children}
     </button>
-  )
+  );
 }
