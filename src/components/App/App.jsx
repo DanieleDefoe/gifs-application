@@ -3,13 +3,13 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-} from 'react-router-dom'
-import Layout from '../Layout/Layout'
-import Home from '../Home/Home'
-import Trendings from '../Trendings/Trendings'
-import Random from '../Random/Random'
-import Error from '../Error/Error'
-import './App.css'
+} from "react-router-dom";
+import Layout from "../Layout/Layout";
+import Home from "../Home/Home";
+import Trendings from "../Trendings/Trendings";
+import Random from "../Random/Random";
+import Error from "../Error/Error";
+import "./App.css";
 
 const routes = createRoutesFromElements(
   <Route path="/gifs-application/" element={<Layout />}>
@@ -17,11 +17,11 @@ const routes = createRoutesFromElements(
     <Route path="trendings" element={<Trendings />} />
     <Route path="random" element={<Random />} />
     <Route path="*" element={<Error />} />
-  </Route>,
-)
+  </Route>
+);
 
-const router = createBrowserRouter(routes)
+const router = createBrowserRouter(routes);
 
 export default function App() {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }

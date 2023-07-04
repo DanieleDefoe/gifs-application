@@ -132,7 +132,7 @@
 
 .loading__panda-ears:before,
 .loading__panda-ears:after {
-  content: ' ';
+  content: " ";
   display: block;
   background: #543535;
   width: 10px;
@@ -164,7 +164,7 @@
 
 .loading__panda-eyes:before,
 .loading__panda-eyes:after {
-  content: '';
+  content: "";
   display: block;
   width: 4px;
   height: 4px;
@@ -198,7 +198,7 @@
 }
 
 .loading__panda-nose:before {
-  content: '';
+  content: "";
   display: block;
   height: 8px;
   width: 8px;
@@ -209,7 +209,7 @@
 }
 
 .loading__panda-nose:after {
-  content: '';
+  content: "";
   display: block;
   height: 15px;
   width: 2px;
@@ -224,7 +224,7 @@
 
 .loading__panda-arms:before,
 .loading__panda-arms:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 3px;
@@ -269,7 +269,7 @@
 
 .loading__panda-legs:before,
 .loading__panda-legs:after {
-  content: ' ';
+  content: " ";
   display: block;
   height: 25px;
   width: 18px;
@@ -288,7 +288,7 @@
 }
 
 .loading__panda-shadow {
-  content: '';
+  content: "";
   display: block;
   background: black;
   width: 60px;

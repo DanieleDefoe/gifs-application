@@ -9,7 +9,6 @@ export const getSearchGifs = createAsyncThunk(
         `${BASE_URL}/search?api_key=${API_KEY}&q=${searchValue}&limit=9&offset=${offset}`
       );
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);

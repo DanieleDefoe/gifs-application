@@ -1,20 +1,20 @@
-import { configureStore } from '@reduxjs/toolkit';
-import formSlice from './formSlice';
-import gifsSlice from './gifsSlice';
-import randomSlice from './randomSlice';
-import trendingsSlice from './trendingsSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import formSlice from "./formSlice";
+import gifsSlice from "./gifsSlice";
+import randomSlice from "./randomSlice";
+import trendingsSlice from "./trendingsSlice";
 
 const store = configureStore({
   reducer: {
     form: formSlice,
     gifs: gifsSlice,
     trendings: trendingsSlice,
-    random: randomSlice
+    random: randomSlice,
   },
-  middleware: getDefaultMiddleware =>
+  middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false
-    })
+      serializableCheck: false,
+    }),
 });
 
 export default store;

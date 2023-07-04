@@ -1,8 +1,12 @@
-import './Icon.css';
+import "./Icon.css";
 
 export default function Icon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 35" className="header__logo">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 164 35"
+      className="header__logo"
+    >
       <g fillRule="evenodd" clipRule="evenodd">
         <path fill="#00ff99" d="M0 3h4v29H0z"></path>
         <path fill="#9933ff" d="M24 11h4v21h-4z"></path>

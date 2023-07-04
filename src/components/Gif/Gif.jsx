@@ -10,5 +10,5 @@ export default function Gif({ images, onLoad, props }) {
     }
   }, []);
 
-  return <img src={images.downsized.url} alt="" className={`gif ${props}`} />;
+  return <img src={images.downsized.url} alt="гифки" className={`gif ${props}`} />;
 }

@@ -4,18 +4,17 @@ import { getTrendings } from '../../store/trendingsSlice'
 import { renderGifs } from '../../utils/utils'
 import GifsContainer from '../GifsContainer/GifsContainer'
 import Loading from '../Loading/Loading'
-import Gif from '../Gif/Gif'
 import Pagination from '../Pagination/Pagination'
 import './Trendings.css'
 
 export default function Trendings() {
-  const { isLoading, data, loadedData } = useSelector(
+  const { isLoading, data, loadedData, offset } = useSelector(
     (store) => store.trendings,
   )
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(getTrendings(0))
+    dispatch(getTrendings({ offset }))
   }, [])
 
   return (

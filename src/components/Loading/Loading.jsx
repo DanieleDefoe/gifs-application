@@ -1,13 +1,13 @@
-import { useEffect, useRef } from 'react'
-import './Loading.css'
-import { focusOn } from '../../utils/utils'
+import { useEffect, useRef } from "react";
+import "./Loading.css";
+import { focusOn } from "../../utils/utils";
 
 export default function Loading() {
-  const loadingRef = useRef(null)
+  const loadingRef = useRef(null);
 
   useEffect(() => {
-    focusOn(loadingRef.current)
-  }, [])
+    focusOn(loadingRef.current);
+  }, []);
 
   return (
     <section className="loading" ref={loadingRef}>
@@ -27,5 +27,5 @@ export default function Loading() {
       </div>
       <div className="loading__panda-shadow"></div>
     </section>
-  )
+  );
 }
