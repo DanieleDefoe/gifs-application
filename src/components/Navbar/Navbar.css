@@ -23,15 +23,18 @@
 }
 
 .nav__link {
-  padding: 8px 0;
+  padding: 8px 0px;
   border-radius: 2px;
   transition: all 0.2s ease-out;
   overflow: hidden;
 }
 
 .nav__link:hover {
-  background: #994baa;
   animation: glow 1s infinite;
+}
+
+.nav__link:active {
+  background-color: rgb(89, 91, 192);
 }
 
 .nav__link_active {
@@ -42,16 +45,41 @@
 
 .nav__button-link {
   width: 100%;
-  padding: 8px 12px;
+  padding: 8px 10px;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 18px;
 }
 
 .nav__button-link:hover {
+  background-color: rgb(105, 107, 227);
   scale: 1;
+  color: white;
 }
 
 .nav__button-link:active {
   scale: 0.9;
+}
+
+.nav__button-link:focus {
+  background-color: rgb(89, 91, 192);
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav__links {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .nav__links > li {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .nav__link {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
 }
