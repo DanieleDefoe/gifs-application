@@ -1,12 +1,12 @@
 # GIPHY
 
 **GitHub Pages**
-
+<img src='./src/images/giphy.jpeg' alt='giphy' >
 [Ссылка на GitHub Pages](https://danieledefoe.github.io/gifs-application/)
 
 _Технологический стэк:_
 
-### REACT/REDUX/JS/VITE
+### ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) | ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white) | ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) | ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
 _Описание проекта:_ SPA(Single Page Application) на React с поиском гифок, отображение популярных гифок, выдачей случайной гифки.
 
