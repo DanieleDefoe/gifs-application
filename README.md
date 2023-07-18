@@ -2,6 +2,7 @@
 
 **GitHub Pages**
 <img src='./src/images/giphy.jpeg' alt='giphy' >
+
 [Ссылка на GitHub Pages](https://danieledefoe.github.io/gifs-application/)
 
 _Технологический стэк:_
